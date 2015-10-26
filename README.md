@@ -20,10 +20,10 @@
     public class ViewCheckin
         extends BaseActivity
   {
-    Bundle bundle;
-    Context context;
-    String sessionToken;
-    WebView webview;
+        Bundle bundle;
+        Context context;
+        String sessionToken;
+        WebView webview;
   
     public String generateComments(HashMap<String, String> paramHashMap)
     {
