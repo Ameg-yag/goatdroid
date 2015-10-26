@@ -1,4 +1,4 @@
-# goatdroid
+# goatdroidexampleMC
 #Source for GoatDroid trying to exploit XSS --> this is the ViewCheckin activity.
     package org.owasp.goatdroid.fourgoats.activities;
 
