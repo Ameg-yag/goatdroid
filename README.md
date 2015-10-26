@@ -57,84 +57,84 @@ import org.owasp.goatdroid.fourgoats.rest.viewcheckin.ViewCheckinRequest;
       str1 = new StringBuilder(String.valueOf(new StringBuilder(String.valueOf(str1)).append("<p><b>").append(str2).append(" ").append(str3).append("</b><br>").append(str4).append("<br>").append((String)localObject).append("<br>").toString())).append("<b>\"").append(str5).append("\"</b><br>").toString() + "<button style=\"color: white; background-color:#2E9AFE\" type=\"button\" onclick=\"window.viewCheckinJSInterface.deleteComment('" + (String)paramHashMap.get(new StringBuilder("commentID").append(j).toString()) + "','" + this.bundle.getString("venueName") + "','" + this.bundle.getString("venueWebsite") + "','" + this.bundle.getString("dateTime") + "','" + this.bundle.getString("latitude") + "','" + this.bundle.getString("longitude") + "','" + this.bundle.getString("checkinID") + "')\">" + "Delete Comment</button><br>";
       j += 1;
     }
-  }
+   }
   
-  public String generateViewCheckinHTML(HashMap<String, String> paramHashMap)
-  {
-    String str = "" + "<p><b>" + this.bundle.getString("venueName") + "</b></p>";
-    String[] arrayOfString = this.bundle.getString("dateTime").split(" ");
-    return new StringBuilder(String.valueOf(new StringBuilder(String.valueOf(new StringBuilder(String.valueOf(new StringBuilder(String.valueOf(str)).append("<p><b>Date:</b> ").append(arrayOfString[0]).append(" <b>Time:</b> ").append(arrayOfString[1]).append("</p>").toString())).append("<button style=\"color: white; background-color:#2E9AFE\" type=\"button\" onclick=\"window.webViewJSInterface.launchWebView('").append(this.bundle.getString("venueWebsite")).append("')\">").append("Visit Website</button><br><br>").toString())).append("<button style=\"color: white; background-color:#2E9AFE\" type=\"button\" onclick=\"window.smsJSInterface.launchSendSMSActivity('").append(this.bundle.getString("venueName")).append("','").append(this.bundle.getString("dateTime")).append("')\">").append("Text This To A Friend</button><p>").toString())).append("<button style=\"color: white; background-color:#2E9AFE\" type=\"button\" onclick=\"window.viewCheckinJSInterface.launchDoCommentActivity('").append(this.bundle.getString("venueName")).append("','").append(this.bundle.getString("venueWebsite")).append("','").append(this.bundle.getString("dateTime")).append("','").append(this.bundle.getString("latitude")).append("','").append(this.bundle.getString("longitude")).append("','").append(this.bundle.getString("checkinID")).append("')\">").append("Leave a Comment</button><br><br>").toString() + generateComments(paramHashMap);
-  }
-  
-  public void launchLogin()
-  {
-    startActivity(new Intent(this.context, Login.class));
-  }
-  
-  public void onCreate(Bundle paramBundle)
-  {
-    super.onCreate(paramBundle);
-    setContentView(2130903097);
-    this.context = getApplicationContext();
-    this.bundle = getIntent().getExtras();
-    this.webview = ((WebView)findViewById(2130968678));
-    this.webview.getSettings().setJavaScriptEnabled(true);
-    this.webview.addJavascriptInterface(new SmsJSInterface(this), "smsJSInterface");
-    this.webview.addJavascriptInterface(new ViewCheckinJSInterface(this), "viewCheckinJSInterface");
-    this.webview.addJavascriptInterface(new WebViewJSInterface(this), "webViewJSInterface");
-    new GetCommentData(null).execute(new Void[] { null, null });
-  }
-  
-  private class GetCommentData
-    extends AsyncTask<Void, Void, HashMap<String, String>>
-  {
-    private GetCommentData() {}
-    
-    protected HashMap<String, String> doInBackground(Void... paramVarArgs)
+    public String generateViewCheckinHTML(HashMap<String, String> paramHashMap)
     {
-      paramVarArgs = new HashMap();
-      UserInfoDBHelper localUserInfoDBHelper = new UserInfoDBHelper(ViewCheckin.this.context);
-      Object localObject = localUserInfoDBHelper.getSessionToken();
-      ViewCheckinRequest localViewCheckinRequest = new ViewCheckinRequest(ViewCheckin.this.context);
-      try
+      String str = "" + "<p><b>" + this.bundle.getString("venueName") + "</b></p>";
+      String[] arrayOfString = this.bundle.getString("dateTime").split(" ");
+      return new StringBuilder(String.valueOf(new StringBuilder(String.valueOf(new StringBuilder(String.valueOf(new   StringBuilder(String.valueOf(str)).append("<p><b>Date:</b> ").append(arrayOfString[0]).append(" <b>Time:</b> ").append(arrayOfString[1]).append("</p>").toString())).append("<button style=\"color: white; background-color:#2E9AFE\" type=\"button\" onclick=\"window.webViewJSInterface.launchWebView('").append(this.bundle.getString("venueWebsite")).append("')\">").append("Visit Website</button><br><br>").toString())).append("<button style=\"color: white; background-color:#2E9AFE\" type=\"button\" onclick=\"window.smsJSInterface.launchSendSMSActivity('").append(this.bundle.getString("venueName")).append("','").append(this.bundle.getString("dateTime")).append("')\">").append("Text This To A Friend</button><p>").toString())).append("<button style=\"color: white; background-color:#2E9AFE\" type=\"button\" onclick=\"window.viewCheckinJSInterface.launchDoCommentActivity('").append(this.bundle.getString("venueName")).append("','").append(this.bundle.getString("venueWebsite")).append("','").append(this.bundle.getString("dateTime")).append("','").append(this.bundle.getString("latitude")).append("','").append(this.bundle.getString("longitude")).append("','").append(this.bundle.getString("checkinID")).append("')\">").append("Leave a Comment</button><br><br>").toString() + generateComments(paramHashMap);
+    }
+  
+    public void launchLogin()
+    {
+      startActivity(new Intent(this.context, Login.class));
+    }
+  
+    public void onCreate(Bundle paramBundle)
+    {
+      super.onCreate(paramBundle);
+      setContentView(2130903097);
+      this.context = getApplicationContext();
+      this.bundle = getIntent().getExtras();
+      this.webview = ((WebView)findViewById(2130968678));
+      this.webview.getSettings().setJavaScriptEnabled(true);
+      this.webview.addJavascriptInterface(new SmsJSInterface(this), "smsJSInterface");
+      this.webview.addJavascriptInterface(new ViewCheckinJSInterface(this), "viewCheckinJSInterface");
+      this.webview.addJavascriptInterface(new WebViewJSInterface(this), "webViewJSInterface");
+      new GetCommentData(null).execute(new Void[] { null, null });
+    }
+  
+    private class GetCommentData
+      extends AsyncTask<Void, Void, HashMap<String, String>>
+    {
+      private GetCommentData() {}
+    
+      protected HashMap<String, String> doInBackground(Void... paramVarArgs)
       {
-        localObject = localViewCheckinRequest.getCheckin((String)localObject, ViewCheckin.this.bundle.getString("checkinID"));
-        paramVarArgs = (Void[])localObject;
-        if (((String)((HashMap)localObject).get("success")).equals("true"))
+        paramVarArgs = new HashMap();
+        UserInfoDBHelper localUserInfoDBHelper = new UserInfoDBHelper(ViewCheckin.this.context);
+        Object localObject = localUserInfoDBHelper.getSessionToken();
+        ViewCheckinRequest localViewCheckinRequest = new ViewCheckinRequest(ViewCheckin.this.context);
+        try
         {
+          localObject = localViewCheckinRequest.getCheckin((String)localObject, ViewCheckin.this.bundle.getString("checkinID"));
           paramVarArgs = (Void[])localObject;
-          ((HashMap)localObject).put("htmlResponse", ViewCheckin.this.generateViewCheckinHTML((HashMap)localObject));
+          if (((String)((HashMap)localObject).get("success")).equals("true"))
+          {
+            paramVarArgs = (Void[])localObject;
+            ((HashMap)localObject).put("htmlResponse", ViewCheckin.this.generateViewCheckinHTML((HashMap)localObject));
+          }
+          return (HashMap<String, String>)localObject;
         }
-        return (HashMap<String, String>)localObject;
+        catch (Exception localException)
+        {
+          paramVarArgs.put("errors", localException.getMessage());
+          paramVarArgs.put("success", "false");
+          return paramVarArgs;
+        }
+        finally
+        {
+          localUserInfoDBHelper.close();
+        }
       }
-      catch (Exception localException)
-      {
-        paramVarArgs.put("errors", localException.getMessage());
-        paramVarArgs.put("success", "false");
-        return paramVarArgs;
-      }
-      finally
-      {
-        localUserInfoDBHelper.close();
-      }
-    }
     
-    public void onPostExecute(HashMap<String, String> paramHashMap)
-    {
-      if (((String)paramHashMap.get("success")).equals("true"))
+      public void onPostExecute(HashMap<String, String> paramHashMap)
       {
-        ViewCheckin.this.webview.loadData((String)paramHashMap.get("htmlResponse"), "text/html", "UTF-8");
-        return;
+        if (((String)paramHashMap.get("success")).equals("true"))
+        {
+          ViewCheckin.this.webview.loadData((String)paramHashMap.get("htmlResponse"), "text/html", "UTF-8");
+          return;
+        }
+        if (((String)paramHashMap.get("errors")).equals("Invalid session"))
+        {
+          ViewCheckin.this.launchLogin();
+          return;
+        }
+        Utils.makeToast(ViewCheckin.this.context, (String)paramHashMap.get("errors"), 1);
       }
-      if (((String)paramHashMap.get("errors")).equals("Invalid session"))
-      {
-        ViewCheckin.this.launchLogin();
-        return;
-      }
-      Utils.makeToast(ViewCheckin.this.context, (String)paramHashMap.get("errors"), 1);
     }
   }
-}
 
 
 
