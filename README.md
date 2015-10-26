@@ -161,9 +161,9 @@
     import org.owasp.goatdroid.fourgoats.misc.Utils;
     import org.owasp.goatdroid.fourgoats.rest.comments.CommentsRequest;
 
-  public class ViewCheckinJSInterface
-  {
-    Context mContext;
+    public class ViewCheckinJSInterface
+    {
+        Context mContext;
   
     public ViewCheckinJSInterface(Context paramContext)
     {
