@@ -17,13 +17,13 @@
     import org.owasp.goatdroid.fourgoats.misc.Utils;
     import org.owasp.goatdroid.fourgoats.rest.viewcheckin.ViewCheckinRequest;
 
-    public class ViewCheckin
-        extends BaseActivity
-  {
-        Bundle bundle;
-        Context context;
-        String sessionToken;
-        WebView webview;
+        public class ViewCheckin
+            extends BaseActivity
+    {
+            Bundle bundle;
+            Context context;
+            String sessionToken;
+            WebView webview;
   
     public String generateComments(HashMap<String, String> paramHashMap)
     {
