@@ -17,8 +17,8 @@
     import org.owasp.goatdroid.fourgoats.misc.Utils;
     import org.owasp.goatdroid.fourgoats.rest.viewcheckin.ViewCheckinRequest;
 
-  public class ViewCheckin
-    extends BaseActivity
+    public class ViewCheckin
+        extends BaseActivity
   {
     Bundle bundle;
     Context context;
