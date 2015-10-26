@@ -19,22 +19,22 @@ import org.owasp.goatdroid.fourgoats.rest.viewcheckin.ViewCheckinRequest;
 
 public class ViewCheckin
   extends BaseActivity
-{
-  Bundle bundle;
-  Context context;
-  String sessionToken;
-  WebView webview;
-  
-  public String generateComments(HashMap<String, String> paramHashMap)
   {
-    String str1 = "";
-    int i;
-    int j;
-    if (paramHashMap.size() > 3)
+    Bundle bundle;
+    Context context;
+    String sessionToken;
+    WebView webview;
+  
+    public String generateComments(HashMap<String, String> paramHashMap)
     {
-      if (paramHashMap.size() / 6 - 3 != -2) {
-        break label60;
-      }
+      String str1 = "";
+      int i;
+      int j;
+      if (paramHashMap.size() > 3)
+      {
+        if (paramHashMap.size() / 6 - 3 != -2) {
+          break label60;
+        }
       i = 1;
       str1 = "" + "<b><big>Comments:</big></b><p>";
       j = 0;
@@ -147,7 +147,8 @@ public class ViewCheckin
 
 
 
-#This is the ViewCheckin JSInterface:
+#This is the ViewCheckin JSInterface
+
 package org.owasp.goatdroid.fourgoats.javascriptinterfaces;
 
 import android.content.Context;
