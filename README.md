@@ -1,21 +1,21 @@
 # goatdroid
 #Source for GoatDroid trying to exploit XSS --> this is the ViewCheckin activity.
-  package org.owasp.goatdroid.fourgoats.activities;
+    package org.owasp.goatdroid.fourgoats.activities;
 
-  import android.content.Context;
-  import android.content.Intent;
-  import android.os.AsyncTask;
-  import android.os.Bundle;
-  import android.webkit.WebSettings;
-  import android.webkit.WebView;
-  import java.util.HashMap;
-  import org.owasp.goatdroid.fourgoats.base.BaseActivity;
-  import org.owasp.goatdroid.fourgoats.db.UserInfoDBHelper;
-  import org.owasp.goatdroid.fourgoats.javascriptinterfaces.SmsJSInterface;
-  import org.owasp.goatdroid.fourgoats.javascriptinterfaces.ViewCheckinJSInterface;
-  import org.owasp.goatdroid.fourgoats.javascriptinterfaces.WebViewJSInterface;
-  import org.owasp.goatdroid.fourgoats.misc.Utils;
-  import org.owasp.goatdroid.fourgoats.rest.viewcheckin.ViewCheckinRequest;
+    import android.content.Context;
+    import android.content.Intent;
+    import android.os.AsyncTask;
+    import android.os.Bundle;
+    import android.webkit.WebSettings;
+    import android.webkit.WebView;
+    import java.util.HashMap;
+    import org.owasp.goatdroid.fourgoats.base.BaseActivity;
+    import org.owasp.goatdroid.fourgoats.db.UserInfoDBHelper;
+    import org.owasp.goatdroid.fourgoats.javascriptinterfaces.SmsJSInterface;
+    import org.owasp.goatdroid.fourgoats.javascriptinterfaces.ViewCheckinJSInterface;
+    import org.owasp.goatdroid.fourgoats.javascriptinterfaces.WebViewJSInterface;
+    import org.owasp.goatdroid.fourgoats.misc.Utils;
+    import org.owasp.goatdroid.fourgoats.rest.viewcheckin.ViewCheckinRequest;
 
   public class ViewCheckin
     extends BaseActivity
@@ -149,17 +149,17 @@
 
 #This is the ViewCheckin JSInterface
 
-  package org.owasp.goatdroid.fourgoats.javascriptinterfaces;
+    package org.owasp.goatdroid.fourgoats.javascriptinterfaces;
 
-  import android.content.Context;
-  import android.content.Intent;
-  import android.os.Bundle;
-  import java.util.HashMap;
-  import org.owasp.goatdroid.fourgoats.activities.DoComment;
-  import org.owasp.goatdroid.fourgoats.activities.ViewCheckin;
-  import org.owasp.goatdroid.fourgoats.db.UserInfoDBHelper;
-  import org.owasp.goatdroid.fourgoats.misc.Utils;
-  import org.owasp.goatdroid.fourgoats.rest.comments.CommentsRequest;
+    import android.content.Context;
+    import android.content.Intent;
+    import android.os.Bundle;
+    import java.util.HashMap;
+    import org.owasp.goatdroid.fourgoats.activities.DoComment;
+    import org.owasp.goatdroid.fourgoats.activities.ViewCheckin;
+    import org.owasp.goatdroid.fourgoats.db.UserInfoDBHelper;
+    import org.owasp.goatdroid.fourgoats.misc.Utils;
+    import org.owasp.goatdroid.fourgoats.rest.comments.CommentsRequest;
 
   public class ViewCheckinJSInterface
   {
@@ -230,4 +230,4 @@
       localIntent.putExtras(localBundle);
       this.mContext.startActivity(localIntent);
     }
-  }
+    }
